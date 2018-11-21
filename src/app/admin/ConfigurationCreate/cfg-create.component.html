@@ -15,12 +15,13 @@
     <div style="left: 20%;" class="title">
             <div>
                 <label>Change Configuration<br>
-                    <button style="cursor: pointer" class="button" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Router</button>
-<button style="cursor: pointer" class="button button2" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Computer</button>
-<button style="cursor: pointer" class="button button3" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">IP Phone</button>
-<button style="cursor: pointer" class="button button4" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Laptop</button>
-<button style="cursor: pointer" class="button button5" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Server</button>
-                
+                    <select type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">
+                    <option value="Router"><button style="cursor: pointer" class="button" type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">Router</button></option>
+                    <option value="computer"><button style="cursor: pointer" class="button button2" type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">Computer</button></option>
+                    <option value="IP Phone"><button style="cursor: pointer" class="button button3" type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">IP Phone</button></option>
+                    <option value="Laptop"><button style="cursor: pointer" class="button button4" type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">Laptop</button></option>
+                    <option value="Server"><button style="cursor: pointer" class="button button5" type="text" [(ngModel)]="changetype" name="changetype" required #psTitle="ngModel">Server</button></option>
+                </select>
                 </label>        
             </div>
         </div>

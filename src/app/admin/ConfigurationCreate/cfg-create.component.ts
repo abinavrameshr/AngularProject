@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 
 export class cfgCreateComponent {
     changeTitle: string;
+    changetype: string;
     changeresource: string;
     changeContent: string;
     change: cfg;
@@ -24,6 +25,7 @@ export class cfgCreateComponent {
    createchange() {
        this.change = new cfg (
            this.changeTitle,
+           this.changetype,
            this.changeresource,
            this.changeContent,
        );

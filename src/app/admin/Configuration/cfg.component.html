@@ -28,6 +28,7 @@
                             <table id="customers">
                                <tr>
                                   <th>TITLE</th>
+                                  <th>TYPE</th>
                                   <th>RESOURCE</th>
                                   <th>CONTENT</th>
                                   <th>STATUS</th>
@@ -35,6 +36,7 @@
                                </tr>
                                <tr>
                            <td> <h4 style="font-weight: bold">{{Configuration.title}}</h4></td>
+                           <td> <h4 style="font-weight: bold">{{Configuration.type}}</h4></td>
                            <td> <h4 style="font-weight: bold">{{Configuration.resource}}</h4></td>
                           <td>  <p>{{Configuration.content | truncate:140}}</p></td>
                           <td>  <h4 style="font-weight: bold">Status :  {{Configuration.status}}</h4></td>
@@ -55,10 +57,18 @@
                          <div class="" style="left:20%;">
                             <label>change Title<br>
                                <input type="text" [(ngModel)]="singlechange.title"
-                               name="editchange" required #psTitle="ngModel">
+                               name="edittitle" required #psTitle="ngModel">
                             </label>
                          </div>
                       </div>
+                      <div class="row">
+                        <div class="" style="left:20%;">
+                           <label>change type<br>
+                              <textarea rows="15" id="content" [(ngModel)]="singlechange.type" 
+                              name="edittype" required #psContent="ngModel"></textarea>
+                           </label>
+                        </div>
+                     </div>
                       <div class="row">
                          <div class="" style="left:20%;">
                             <label>change resource<br>

@@ -15,6 +15,7 @@ export class cfgService {
          let newchange = dbRef.push();
          newchange.set({
              title: change.title,
+             type: change.type,
              resource: change.resource,
              content: change.content,
              userName: this.authUser.email,
@@ -29,6 +30,7 @@ export class cfgService {
         let dbRef = firebase.database().ref('changes/').child(update.id)
         .update({
             title: update.title,
+            type: update.type,
             resource: update.resource,
             content: update.content
             
