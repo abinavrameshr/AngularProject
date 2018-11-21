@@ -1,0 +1,53 @@
+<div class="mainContainer"><div class="mainTitle">
+    <div style="left: 20%;">
+        <h1>Create a Change Request</h1>
+    </div>
+</div>
+
+<form>
+    <div style="left: 20%;" class="title">
+        <div>
+            <label>Change title<br>
+            <input type="text" [(ngModel)]="incidentTitle" name="incidentTitle" required #psTitle="ngModel">
+            </label>        
+        </div>
+    </div>
+    <div style="left: 20%;" class="title">
+            <div>
+                <label>Change Configuration<br>
+                    <button class="button">Router</button>
+<button class="button button2">Computer</button>
+<button class="button button3">IP Phone</button>
+<button class="button button4">Laptop</button>
+<button class="button button5">Server</button>
+                
+                </label>        
+            </div>
+        </div>
+
+        <div style="left: 20%;" class="title">
+            <div>
+                <label>Resource ID<br>
+                <input type="text" [(ngModel)]="incidentTitle" name="incidentTitle" required #psTitle="ngModel">
+                </label>        
+            </div>
+        </div>
+    <div style="left: 20%;" class="content">
+            <div>
+                <label>Change Specifications<br>
+                <textarea rows="15" id="content" [(ngModel)]="incidentContent" name="incidentContent" required #psContent="ngModel">
+                </textarea>
+                </label>        
+            </div>
+        </div>
+        <div style="left: 20%;" class="btn">
+                <div>
+                    <div>
+                        <button class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
+                         (click)="createIncident()">Create</button>
+                        <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+                    </div>      
+                </div>
+         </div>
+</form>
+</div>
