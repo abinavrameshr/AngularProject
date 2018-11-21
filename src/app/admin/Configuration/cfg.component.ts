@@ -73,7 +73,7 @@ export class cfgComponent implements OnInit {
             this.router.navigate(['/admin/']);
         }
         else {
-            alert("Incident not closed, as changes can only be closed by admin");
+            alert("Change not closed ! Please try again !");
         }
     }
     }

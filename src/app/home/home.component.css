@@ -386,4 +386,16 @@ html, body {
       width:100px;
   }
   
+  .button{padding: 7px 12px;
+    font-size: 8px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgb(28, 148, 32);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px rgb(155, 154, 154);
+    display: inline-block;}
+  
   

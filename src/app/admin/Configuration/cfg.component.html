@@ -8,9 +8,9 @@
              <div class="menu">
                  <div *ngIf = "theUser">
                  <ul>
-                    <li class="nav-menu1"><a (click)="chooseMode('create')">Create change</a></li>
-                    <li *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')">Manage Changes</a></li>
-                    <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                    <li style="cursor: pointer" class="nav-menu1"><a (click)="chooseMode('create')">Create change</a></li>
+                    <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')">Manage Changes</a></li>
+                    <li style="cursor: pointer" class="nav-menu2"><a (click)="logout()">Logout</a></li>
                  </ul>
                 </div>
              </div>
@@ -25,13 +25,21 @@
                         <div class="media-object">
           
                          <div class="media-object-section main-section">
-                            <h4 style="font-weight: bold">{{Configuration.title}}</h4>
-                            <p>{{Configuration.content | truncate:140}}</p>
-                            <h4 style="font-weight: bold">Status :  {{Configuration.status}}</h4>
-                            <p>Created by: {{Configuration.userName}}</p>
+                            <table id="customers">
+                               <tr>
+                                  <th>TITLE</th>
+                                  <th>CONTENT</th>
+                                  <th>STATUS</th>
+                                  <th>CREATED BY</th>
+                               </tr>
+                               <tr>
+                           <td> <h4 style="font-weight: bold">{{Configuration.title}}</h4></td>
+                          <td>  <p>{{Configuration.content | truncate:140}}</p></td>
+                          <td>  <h4 style="font-weight: bold">Status :  {{Configuration.status}}</h4></td>
+                          <td><p>Created by: {{Configuration.userName}}</p></td></tr></table>
                             <div>
-                               <a style="padding-right: 10px; color:green" class="btn" (click)="editIncident(Configuration)" >Edit</a>
-                               <a style="padding-left: 10px; color: red" class="btn" (click)="closeIncident(Configuration)" >Close Change</a>
+                               <button style= "cursor: pointer" class="btn1" (click)="editIncident(Configuration)" >Edit</button>
+                               <button style= "cursor: pointer" class="btn2" (click)="closeIncident(Configuration)" >Close Change</button>
                             </div>
                          </div>
                         </div>
