@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+.top-bar {
+    background-color: green;
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    height: 10%;
+    width: 100%;
+}
+
+.top-bar .logo {
+    position: absolute;
+    top:0%;
+    left:2%;
+    display: block;
+    width: 160px;
+    height: 53px;
+}
+
+.top-bar-title {
+    font-family: 'Anton', cursive;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+.nav-menu1 a {
+    color: white;
+    font-family: 'Anton', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+    font-size: 15px;
+}
+.nav-menu2  a {
+    color: white;
+    font-family: 'Anton', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 5%;
+    font-size: 15px;
+}
+
+.nav-menu3 a {
+    color: white;
+    font-family: 'Anton', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    font-size: 15px;
+}
+
+.nav-menu4 a {
+    color: white;
+    font-family: 'Anton', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    font-size: 13px;
+}
+
+.nav-menu1 .nav-menu2 {
+    list-style-type: none;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+    padding: 0%;
+    margin-top: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn1{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+.btn2{
+    background-color:#f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}

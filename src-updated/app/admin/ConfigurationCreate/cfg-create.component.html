@@ -1,0 +1,53 @@
+<div class="mainContainer"><div class="mainTitle">
+    <div style="left: 20%;">
+        <h1>Create a change Request</h1>
+    </div>
+</div>
+
+<form>
+    <div style="left: 20%;" class="title">
+        <div>
+            <label>Change title<br>
+            <input type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">
+            </label>        
+        </div>
+    </div>
+    <div style="left: 20%;" class="title">
+            <div>
+                <label>Change Configuration<br>
+                    <button style="cursor: pointer" class="button" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Router</button>
+<button style="cursor: pointer" class="button button2" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Computer</button>
+<button style="cursor: pointer" class="button button3" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">IP Phone</button>
+<button style="cursor: pointer" class="button button4" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Laptop</button>
+<button style="cursor: pointer" class="button button5" type="text" [(ngModel)]="changeTitle" name="changeTitle" required #psTitle="ngModel">Server</button>
+                
+                </label>        
+            </div>
+        </div>
+
+        <div style="left: 20%;" class="title">
+            <div>
+                <label>Resource ID<br>
+                <input type="text" [(ngModel)]="changeresource" name="changeresource" required #psTitle="ngModel">
+                </label>        
+            </div>
+        </div>
+    <div style="left: 20%;" class="content">
+            <div>
+                <label>Change Specifications<br>
+                <textarea rows="15" id="content" [(ngModel)]="changeContent" name="changeContent" required #psContent="ngModel">
+                </textarea>
+                </label>        
+            </div>
+        </div>
+        <div style="left: 20%;" class="btn">
+                <div>
+                    <div>
+                        <button class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
+                         (click)="createchange()">Create</button>
+                        <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+                    </div>      
+                </div>
+         </div>
+</form>
+</div>
