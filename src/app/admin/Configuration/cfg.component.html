@@ -28,12 +28,14 @@
                             <table id="customers">
                                <tr>
                                   <th>TITLE</th>
+                                  <th>RESOURCE</th>
                                   <th>CONTENT</th>
                                   <th>STATUS</th>
                                   <th>CREATED BY</th>
                                </tr>
                                <tr>
                            <td> <h4 style="font-weight: bold">{{Configuration.title}}</h4></td>
+                           <td> <h4 style="font-weight: bold">{{Configuration.resource}}</h4></td>
                           <td>  <p>{{Configuration.content | truncate:140}}</p></td>
                           <td>  <h4 style="font-weight: bold">Status :  {{Configuration.status}}</h4></td>
                           <td><p>Created by: {{Configuration.userName}}</p></td></tr></table>
@@ -59,12 +61,20 @@
                       </div>
                       <div class="row">
                          <div class="" style="left:20%;">
-                            <label>Configuration Content<br>
-                               <textarea rows="15" id="content" [(ngModel)]="singlechange.content" 
-                               name="editContent" required #psContent="ngModel"></textarea>
+                            <label>change resource<br>
+                               <textarea rows="15" id="content" [(ngModel)]="singlechange.resource" 
+                               name="editresource" required #psContent="ngModel"></textarea>
                             </label>
                          </div>
                       </div>
+                      <div class="row">
+                        <div class="" style="left:20%;">
+                           <label>Configuration Content<br>
+                              <textarea rows="15" id="content" [(ngModel)]="singlechange.content" 
+                              name="editContent" required #psContent="ngModel"></textarea>
+                           </label>
+                        </div>
+                     </div>
                       <div style="left: 20%;" class="btn">
                          <div>
                              <div>

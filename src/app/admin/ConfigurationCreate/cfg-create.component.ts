@@ -11,8 +11,10 @@ import { Router } from "@angular/router";
 
 export class cfgCreateComponent {
     changeTitle: string;
+    changeresource: string;
     changeContent: string;
     change: cfg;
+    
 
     constructor(
         private changeSVC: cfgService, 
@@ -22,7 +24,8 @@ export class cfgCreateComponent {
    createchange() {
        this.change = new cfg (
            this.changeTitle,
-           this.changeContent 
+           this.changeresource,
+           this.changeContent,
        );
        this.changeSVC.createchange(this.change);
        alert(`${this.changeTitle} added to posts`);
