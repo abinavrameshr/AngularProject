@@ -9,7 +9,7 @@
                  <div *ngIf = "theUser">
                  <ul>
                     <li style="cursor: pointer" class="nav-menu1"><a (click)="chooseMode('create')">Create change</a></li>
-                    <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')">Manage Changes</a></li>
+                    <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')">Manage changes</a></li>
                     <li style="cursor: pointer" class="nav-menu2"><a (click)="logout()">Logout</a></li>
                  </ul>
                 </div>
@@ -17,10 +17,10 @@
      </div>
 
      <div style="position: absolute; top: 20%; left: 20%; max-width: 60%;" [ngSwitch]="menuChoice">
-        <div *ngSwitchCase="'create'"><create-incident></create-incident></div>
+        <div *ngSwitchCase="'create'"><create-change></create-change></div>
         <div *ngSwitchDefault>
             <div *ngIf = "formDisplay" class="row">
-                  <div class="row" *ngFor="let Configuration of incidents">
+                  <div class="row" *ngFor="let Configuration of changes">
                      <div class="spacer"> 
                         <div class="media-object">
           
@@ -38,8 +38,8 @@
                           <td>  <h4 style="font-weight: bold">Status :  {{Configuration.status}}</h4></td>
                           <td><p>Created by: {{Configuration.userName}}</p></td></tr></table>
                             <div>
-                               <button style= "cursor: pointer" class="btn1" (click)="editIncident(Configuration)" >Edit</button>
-                               <button style= "cursor: pointer" class="btn2" (click)="closeIncident(Configuration)" >Close Change</button>
+                               <button style= "cursor: pointer" class="btn1" (click)="editchange(Configuration)" >Edit</button>
+                               <button style= "cursor: pointer" class="btn2" (click)="closechange(Configuration)" >Close change</button>
                             </div>
                          </div>
                         </div>
@@ -51,16 +51,16 @@
                    <form>
                       <div class="row">
                          <div class="" style="left:20%;">
-                            <label>Change Title<br>
-                               <input type="text" [(ngModel)]="singleIncident.title"
-                               name="editIncident" required #psTitle="ngModel">
+                            <label>change Title<br>
+                               <input type="text" [(ngModel)]="singlechange.title"
+                               name="editchange" required #psTitle="ngModel">
                             </label>
                          </div>
                       </div>
                       <div class="row">
                          <div class="" style="left:20%;">
                             <label>Configuration Content<br>
-                               <textarea rows="15" id="content" [(ngModel)]="singleIncident.content" 
+                               <textarea rows="15" id="content" [(ngModel)]="singlechange.content" 
                                name="editContent" required #psContent="ngModel"></textarea>
                             </label>
                          </div>
@@ -69,7 +69,7 @@
                          <div>
                              <div>
                                  <button style="background-color: green; color:white"class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
-                                  (click)="updateIncident(singleIncident)">Update Change</button>
+                                  (click)="updatechange(singlechange)">Update change</button>
                                  <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
                              </div>      
                          </div>

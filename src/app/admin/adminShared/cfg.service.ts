@@ -9,40 +9,40 @@ export class cfgService {
     authUser: any;
     loggedInUser: string;
 
-    createIncident(incident: cfg){
+    createchange(change: cfg){
          this.authUser = firebase.auth().currentUser;
          let dbRef = firebase.database().ref('Configuration/');
-         let newIncident = dbRef.push();
-         newIncident.set({
-             title: incident.title,
-             content: incident.content,
+         let newchange = dbRef.push();
+         newchange.set({
+             title: change.title,
+             content: change.content,
              userName: this.authUser.email,
-             id: newIncident.key ,
+             id: newchange.key ,
              status: "open"
          })
          .catch ((error) =>{
               alert(`failed upload: ${error}`);
         });
     }
-    editIncident ( update: cfg) {
-        let dbRef = firebase.database().ref('incidents/').child(update.id)
+    editchange ( update: cfg) {
+        let dbRef = firebase.database().ref('changes/').child(update.id)
         .update({
             title: update.title,
             content: update.content
         });
-        alert('incident updated');
+        alert('change updated');
     }
 
-    closeIncident (closeIncident: cfg){
+    closechange (closechange: cfg){
         this.authUser = firebase.auth().currentUser;
         this.loggedInUser = this.authUser.email;
         
         
-        let dbRef = firebase.database().ref('Configuration/').child(closeIncident.id)
+        let dbRef = firebase.database().ref('Configuration/').child(closechange.id)
         .update({
             status: "closed"
         });
-        alert('Change closed'); 
+        alert('change closed'); 
     }
     }
 

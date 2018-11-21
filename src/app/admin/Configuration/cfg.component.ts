@@ -13,16 +13,16 @@ import { cfg } from '../adminShared/cfg';
 export class cfgComponent implements OnInit {
     theUser: string;
     menuChoice: string;
-    incidents: cfg[];
+    changes: cfg[];
     formDisplay: boolean = true;
-    singleIncident: cfg;
+    singlechange: cfg;
     authUser: any;
     loggedInUser: string;
 
     constructor(
         private userSVC: UserService,
         private router: Router,
-        private incidentSVC: cfgService
+        private changesVC: cfgService
     ){}
     
     logout(){
@@ -45,11 +45,11 @@ export class cfgComponent implements OnInit {
         dbRef.once('value')
         .then((snapshot)=> {
             let tmp: string[] = snapshot.val();
-            this.incidents = Object.keys(tmp).map(key => tmp[key])
+            this.changes = Object.keys(tmp).map(key => tmp[key])
         });
     }
-    editIncident(theIncident: cfg){
-        this.singleIncident = theIncident;
+    editchange(thechange: cfg){
+        this.singlechange = thechange;
         this.formDisplay = false;
     }
 
@@ -57,23 +57,23 @@ export class cfgComponent implements OnInit {
         this.formDisplay = true;
     }
 
-    updateIncident(single: cfg) {
-        this.incidentSVC.editIncident(single);
+    updatechange(single: cfg) {
+        this.changesVC.editchange(single);
         this.formDisplay = true;
     }
 
-    closeIncident(single: cfg){
+    closechange(single: cfg){
         this.authUser = firebase.auth().currentUser;
         this.loggedInUser = this.authUser.email;
         
         
         let verify = confirm('Are you sure you want to close this change?')
         if(verify == true) {
-            this.incidentSVC.closeIncident(single);
+            this.changesVC.closechange(single);
             this.router.navigate(['/admin/']);
         }
         else {
-            alert("Change not closed ! Please try again !");
+            alert("change not closed ! Please try again !");
         }
     }
     }

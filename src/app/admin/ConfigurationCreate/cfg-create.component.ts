@@ -4,28 +4,28 @@ import { cfgService } from "../adminShared/cfg.service";
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'create-incident',
+    selector: 'create-change',
     templateUrl: './cfg-create.component.html',
     styleUrls: ['./cfg-create.component.css']
 })
 
 export class cfgCreateComponent {
-    incidentTitle: string;
-    incidentContent: string;
-    incident: cfg;
+    changeTitle: string;
+    changeContent: string;
+    change: cfg;
 
     constructor(
-        private incidentSVC: cfgService, 
+        private changeSVC: cfgService, 
         private router: Router
     ){}
 
-   createIncident() {
-       this.incident = new cfg (
-           this.incidentTitle,
-           this.incidentContent 
+   createchange() {
+       this.change = new cfg (
+           this.changeTitle,
+           this.changeContent 
        );
-       this.incidentSVC.createIncident(this.incident);
-       alert(`${this.incidentTitle} added to posts`);
+       this.changeSVC.createchange(this.change);
+       alert(`${this.changeTitle} added to posts`);
        this.router.navigate(['/admin/Configuration']);
    }
 
