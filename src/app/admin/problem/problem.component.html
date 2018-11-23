@@ -1,0 +1,86 @@
+
+
+
+<div class="top-bar">
+      <a href="#"> <img class="logo" src="http://logodust.com/img/free/logo28.png">
+      </a>
+           <div class="top-bar-title">problem Management V2.0</div>
+           <div class="menu">
+               <div *ngIf = "theUser">
+               <ul>
+                  <li style="cursor: pointer" class="nav-menu1"><a (click)="chooseMode('create')"><button class="button button1">Create problem Request</button> </a></li>
+                  <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu2"><a [routerLink]="['/admin/problem']" (click)="chooseMode('')"><button class="button button1">Manage problems</button></a></li>
+                  <li style="cursor: pointer" class="nav-menu3"><a [routerLink]="['/admin']"><button class="button button1">Home</button></a></li>
+                  <li style="cursor: pointer" class="nav-menu4"><a (click)="logout()"><button class="button button1">Logout</button></a></li>
+                  <li class="nav-menu5">current user {{theUser}} </li>
+               </ul>
+              </div>
+           </div>
+   </div>
+
+   <div style="position: absolute; top: 20%; left: 20%; max-width: 60%;" [ngSwitch]="menuChoice">
+      <div *ngSwitchCase="'create'"><create-problem></create-problem></div>
+      <div *ngSwitchDefault>
+          <div *ngIf = "formDisplay" class="row">
+                <div class="row" *ngFor="let problem of problems">
+                   <div class="spacer"> 
+                      <div class="media-object">
+        
+                       <div class="media-object-section main-section">
+                          <table id="customers">
+                             <tr>
+                                <th>TITLE</th>
+                                <th>CONTENT</th>
+                                <th>STATUS</th>
+                                <th>CREATED BY</th>
+                             </tr>
+                             <tr>
+                         <td> <h4 style="font-weight: bold">{{problem.title}}</h4></td>
+                        <td>  <p>{{problem.content | truncate:140}}</p></td>
+                        <td>  <h4 style="font-weight: bold">Status :  {{problem.status}}</h4></td>
+                        <td><p>Created by: {{problem.userName}}</p></td></tr></table>
+                          <div>
+                             <button style= "cursor: pointer" class="btn1" (click)="editproblem(problem)" >Edit</button>
+                             <button style= "cursor: pointer" class="btn2" (click)="closeproblem(problem)" >Close problem</button>
+                          </div>
+                       </div>
+                      </div>
+                   </div> 
+                </div>
+             </div>
+        
+             <div *ngIf = "!formDisplay" class="row">
+                 <form>
+                    <div class="row">
+                       <div class="" style="left:20%;">
+                          <label>problem title<br>
+                             <input type="text" [(ngModel)]="singleproblem.title"
+                             name="edittitle" required #pstitle="ngModel">
+                          </label>
+                       </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="" style="left:20%;">
+                         <label>problem Content<br>
+                            <textarea rows="15" id="content" [(ngModel)]="singleproblem.content" 
+                            name="editContent" required #psContent="ngModel"></textarea>
+                         </label>
+                      </div>
+                   </div>
+                    <div style="left: 20%;" class="btn">
+                       <div>
+                           <div>
+                               <button style="background-color: green; color:white"class="success" type="button" [disabled]="!pstitle.valid || !psContent.valid" 
+                                (click)="updateproblem(singleproblem)">Update problem</button>
+                               <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
+                           </div>      
+                       </div>
+                </div>
+                 </form>
+             </div>
+        
+        
+        
+           </div>
+        </div>

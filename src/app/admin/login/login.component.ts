@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
 export class LoginComponent {
     email: string;
     password1: string;
+    
 
     constructor( private userSVC: UserService, private router: Router) {}
 
     login(){
         this.userSVC.login(this.email, this.password1);
         this.userSVC.verifyUser();
+        
     }
 
     signup(){

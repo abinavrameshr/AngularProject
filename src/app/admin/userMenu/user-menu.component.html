@@ -6,18 +6,16 @@
              <div class="menu">
                  <div *ngIf = "theUser">
                  <ul>
-                     <li class="nav-menu1"><a [routerLink]="['/admin/Configuration']">Manage Configuration</a></li>
-                     <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                     <li class="nav-menu1"><a [routerLink]="['/admin/Configuration']"><button class="button button1">Manage Configuration</button></a></li>
+                     <li class="nav-menu2"><a [routerLink]="['/admin/problem']"><button class="button button1">Manage Problem</button></a></li>
+                     <li class="nav-menu3"><a [routerLink]="['/admin']"><button class="button button1">Home</button></a></li>
+                     <li class="nav-menu4"><a (click)="logout()"><button class="button button1">Logout</button></a></li>
+                     <li class="nav-menu5">current user {{theUser}} </li>
                  </ul>
                 </div>
              </div>
      </div>
-<!-- <div *ngIf = "theUser">
-    <ul>
-        
-        <li><a>{{theUser}} Logged in</a></li>
-    </ul>
-</div> -->
+
 <div class="container">
     <img src="http://logodust.com/img/free/logo28.png" style="position: absolute; left: 30%; top: 20%; width: 40%; height: 60%;">
     <h2 style="text-align: center">Configuration Management V2.0</h2>

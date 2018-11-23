@@ -17,6 +17,8 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 8px;
+    display: inline-block
 }
 
 button:hover {
@@ -34,6 +36,9 @@ button:hover {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 8px;
+    display: inline-block
+
 }
 
 /* Center the image and position the close button */

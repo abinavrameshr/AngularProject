@@ -50,7 +50,7 @@ export class UserService implements CanActivate {
         if(this.authUser) {
             this.loggedInUser = this.authUser.email;
             this.userLoggedIn = true;
-            if(this.loggedInUser){
+            if(this.userLoggedIn){
             this.router.navigate(['/admin']);
             } 
         }

@@ -8,9 +8,12 @@
              <div class="menu">
                  <div *ngIf = "theUser">
                  <ul>
-                    <li style="cursor: pointer" class="nav-menu1"><a (click)="chooseMode('create')">Create change</a></li>
-                    <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')">Manage changes</a></li>
-                    <li style="cursor: pointer" class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                    <li style="cursor: pointer" class="nav-menu1"><a (click)="chooseMode('create')"><button class="button button1">Create Config Request</button> </a></li>
+                    <li style="cursor: pointer" *ngIf="menuChoice" class="nav-menu2"><a [routerLink]="['/admin/Configuration']" (click)="chooseMode('')"><button class="button button1">Manage changes</button></a></li>
+                    <li style="cursor: pointer" class="nav-menu3"><a [routerLink]="['/admin']"><button class="button button1">Home</button></a></li>
+                    <li style="cursor: pointer" class="nav-menu4"><a (click)="logout()"><button class="button button1">Logout</button></a></li>
+                    <li class="nav-menu5">current user {{theUser}} </li>
+
                  </ul>
                 </div>
              </div>
@@ -55,7 +58,7 @@
                    <form>
                       <div class="row">
                          <div class="" style="left:20%;">
-                            <label>change Title<br>
+                            <label>Configuration Title<br>
                                <input type="text" [(ngModel)]="singlechange.title"
                                name="edittitle" required #psTitle="ngModel">
                             </label>
@@ -63,7 +66,7 @@
                       </div>
                       <div class="row">
                         <div class="" style="left:20%;">
-                           <label>change type<br>
+                           <label>Configuration type<br>
                               <textarea rows="15" id="content" [(ngModel)]="singlechange.type" 
                               name="edittype" required #psContent="ngModel"></textarea>
                            </label>
@@ -71,7 +74,7 @@
                      </div>
                       <div class="row">
                          <div class="" style="left:20%;">
-                            <label>change resource<br>
+                            <label>Configuration resource<br>
                                <textarea rows="15" id="content" [(ngModel)]="singlechange.resource" 
                                name="editresource" required #psContent="ngModel"></textarea>
                             </label>
@@ -89,7 +92,7 @@
                          <div>
                              <div>
                                  <button style="background-color: green; color:white"class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
-                                  (click)="updatechange(singlechange)">Update change</button>
+                                  (click)="updatechange(singlechange)">Update Configuration</button>
                                  <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
                              </div>      
                          </div>

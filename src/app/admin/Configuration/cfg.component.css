@@ -25,46 +25,60 @@
     text-align: center;
 }
 
+
 .nav-menu1 a {
     color: white;
-    font-family: 'Anton', cusive;
+    font-family: 'Anton', cursive;
     text-decoration: none;
     position: absolute;
     top: 0%;
     left: 15%;
     font-size: 15px;
+    cursor: pointer;
 }
-.nav-menu2  a {
+.nav-menu2 a {
     color: white;
-    font-family: 'Anton', cusive;
+    font-family: 'Anton', cursive;
     text-decoration: none;
     position: absolute;
     top: 0%;
-    right: 5%;
+    left: 28%;
     font-size: 15px;
+    cursor: pointer;
 }
-
 .nav-menu3 a {
     color: white;
-    font-family: 'Anton', cusive;
+    font-family: 'Anton', cursive;
     text-decoration: none;
     position: absolute;
     top: 0%;
-    left: 25%;
+    right: 30%;
     font-size: 15px;
+    cursor: pointer;
 }
-
 .nav-menu4 a {
     color: white;
-    font-family: 'Anton', cusive;
+    font-family: 'Anton', cursive;
     text-decoration: none;
     position: absolute;
     top: 0%;
-    left: 35%;
-    font-size: 13px;
+    right: 10%;
+    font-size: 15px;
+    cursor: pointer;
 }
 
-.nav-menu1 .nav-menu2 {
+.nav-menu5{
+    color: white;
+    font-family: 'Anton', cursive;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-menu1 .nav-menu2 .nav-menu3 .nav-menu4{
     list-style-type: none;
     display: block;
 }
@@ -129,3 +143,30 @@ li {
     margin: 4px 2px;
     cursor: pointer; 
 }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border-radius: 8px;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: green; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+

@@ -32,13 +32,13 @@ input[type=text]:focus textarea:focus {
 
 
 
-.nav-menu4 a {
+.nav-menu1 a {
     color: white;
     font-family: 'Anton', cusive;
     text-decoration: none;
     position: absolute;
     top: 0%;
-    right: 40%;
+    right: 10%;
     font-size: 15px;
     display: block;
 }
