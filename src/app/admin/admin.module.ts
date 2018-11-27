@@ -21,6 +21,9 @@ import { cfgCreateComponent } from './ConfigurationCreate/cfg-create.component';
 import { problemservice } from './adminShared/problem.service';
 import { problemComponent } from './problem/problem.component';
 import { problemCreateComponent } from './problemCreate/problem-create.component';
+import { assetservice } from './adminShared/asset.service';
+import { assetcomponent } from './asset/asset.component';
+import { assetcreatecomponent } from './assetcreate/asset-create.component';
 
 
 
@@ -31,6 +34,7 @@ const AdminRoutes: Routes = [
         children: [
             { path: 'Configuration', component: cfgComponent, canActivate: [UserService]},
             { path: 'problem', component: problemComponent, canActivate: [UserService]},
+            { path: 'asset', component: assetcomponent, canActivate: [UserService]},
             { path: 'login', component: LoginComponent },
             { path: 'signup', component: SignUpComponent },
             { path: 'user', component: UserMenuComponent, canActivate: [UserService] },
@@ -61,13 +65,16 @@ const AdminRoutes: Routes = [
         cfgCreateComponent,
         TruncatePipe,
         problemComponent,
-        problemCreateComponent
+        problemCreateComponent,
+        assetcomponent,
+        assetcreatecomponent
         
     ],
     providers: [
         UserService,
         cfgService,
-        problemservice
+        problemservice,
+        assetservice
     ]
 })
 export class AdminModule {}

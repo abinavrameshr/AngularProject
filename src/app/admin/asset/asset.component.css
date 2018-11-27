@@ -12,22 +12,19 @@
 .top-bar .logo {
     position: absolute;
     top:0%;
-    right:0%;
+    left:2%;
     display: block;
-    width: 140px;
+    width: 160px;
     height: 53px;
 }
 
 .top-bar-title {
     font-family: 'Anton', cursive;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
-    text-align: left;
-    left: 0%;
-    top: 70%;
-    display: inline;
-    
+    text-align: center;
 }
+
 
 .nav-menu1 a {
     color: white;
@@ -35,10 +32,9 @@
     text-decoration: none;
     position: absolute;
     top: 0%;
-    left: 20%;
+    left: 15%;
     font-size: 15px;
     cursor: pointer;
-    display: inline;
 }
 .nav-menu2 a {
     color: white;
@@ -46,21 +42,9 @@
     text-decoration: none;
     position: absolute;
     top: 0%;
-    left: 35%;
+    left: 28%;
     font-size: 15px;
     cursor: pointer;
-    display: inline;
-}
-.nav-menu6 a {
-    color: white;
-    font-family: 'Anton', cursive;
-    text-decoration: none;
-    position: absolute;
-    top: 0%;
-    left: 45%;
-    font-size: 15px;
-    cursor: pointer;
-    display: inline;
 }
 .nav-menu3 a {
     color: white;
@@ -68,10 +52,9 @@
     text-decoration: none;
     position: absolute;
     top: 0%;
-    right: 18%;
+    right: 30%;
     font-size: 15px;
     cursor: pointer;
-    display: inline
 }
 .nav-menu4 a {
     color: white;
@@ -82,7 +65,6 @@
     right: 10%;
     font-size: 15px;
     cursor: pointer;
-    display: inline;
 }
 
 .nav-menu5{
@@ -96,7 +78,7 @@
     cursor: pointer;
 }
 
-.nav-menu1 .nav-menu2 .nav-menu3 .nav-menu4 .nav-menu6{
+.nav-menu1 .nav-menu2 .nav-menu3 .nav-menu4{
     list-style-type: none;
     display: block;
 }
@@ -113,6 +95,55 @@ li {
     width: 100%;
     height: 100%;
 }
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn1{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+.btn2{
+    background-color:#f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border-radius: 8px;
